@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<documentoSalida>
+    <empleadosNomina>
+        <salidaWrapper>
+            <datosEmpleado>
+                <id>1033718747</id>
+                <nombre>Juan Carlos</nombre>
+                <apellido>Fuyo Gonzalez</apellido>
+                <telefono>3144071574</telefono>
+                <correo>juanf67@gmail.com</correo>
+                <direccion>
+                    <residencia>Cra 9 # 33 -44</residencia>
+                    <barrio>Mirador Polo</barrio>
+                    <ciudad>Cauca</ciudad>
+                </direccion>
+                <fechaDeNac/>
+                <cargo>DESARROLLADOR_FULLSTACK</cargo>
+                <area>Desarrollador web</area>
+                <banda>A6</banda>
+            </datosEmpleado>
+            <valorNomina>
+                <pagoTNomina>10598400</pagoTNomina>
+                <diasV>4</diasV>
+                <valorV>1920000</valorV>
+                <diasI>0</diasI>
+                <valorI>0</valorI>
+                <horasT>160</horasT>
+                <valorT>9600000</valorT>
+                <valorH>60000</valorH>
+                <descuentoS_S>921600</descuentoS_S>
+            </valorNomina>
+            <bonificacionBanda>
+                <banda>A6</banda>
+                <valorNom>10598400</valorNom>
+                <valorBanda>22892544</valorBanda>
+            </bonificacionBanda>
+        </salidaWrapper>
+        <salidaWrapper>
+            <datosEmpleado>
+                <id>1000807021</id>
+                <nombre>Maria Alejandra</nombre>
+                <apellido>Cardenas Anaya</apellido>
+                <telefono>3117792692</telefono>
+                <correo>maca33@gmail.com</correo>
+                <direccion>
+                    <residencia>Cra 8 # 66 - 55</residencia>
+                    <barrio>Sacarias</barrio>
+                    <ciudad>Cali</ciudad>
+                </direccion>
+                <fechaDeNac/>
+                <cargo>BACK_END_JUNIOR</cargo>
+                <area>Desarrollador web</area>
+                <banda>A4</banda>
+            </datosEmpleado>
+            <valorNomina>
+                <pagoTNomina>10018800</pagoTNomina>
+                <diasV>7</diasV>
+                <valorV>2520000</valorV>
+                <diasI>2</diasI>
+                <valorI>720000</valorI>
+                <horasT>170</horasT>
+                <valorT>7650000</valorT>
+                <valorH>45000</valorH>
+                <descuentoS_S>871200</descuentoS_S>
+            </valorNomina>
+            <bonificacionBanda>
+                <banda>A4</banda>
+                <valorNom>10018800</valorNom>
+                <valorBanda>14427072</valorBanda>
+            </bonificacionBanda>
+        </salidaWrapper>
+        <salidaWrapper>
+            <datosEmpleado>
+                <id>1037778927</id>
+                <nombre>Miriam</nombre>
+                <apellido>Ceballo  Carmona</apellido>
+                <telefono>3149996754</telefono>
+                <correo>miri7877@gmail.com</correo>
+                <direccion>
+                    <residencia>Cra 4 # 77 - 22</residencia>
+                    <barrio>Mirador Barcelona</barrio>
+                    <ciudad>Medellin</ciudad>
+                </direccion>
+                <fechaDeNac/>
+                <cargo>ASEADORA</cargo>
+                <area>Servicios Generales</area>
+                <banda>A1</banda>
+            </datosEmpleado>
+            <valorNomina>
+                <pagoTNomina>2502400</pagoTNomina>
+                <diasV>0</diasV>
+                <valorV>0</valorV>
+                <diasI>2</diasI>
+                <valorI>320000</valorI>
+                <horasT>120</horasT>
+                <valorT>2400000</valorT>
+                <valorH>20000</valorH>
+                <descuentoS_S>217600</descuentoS_S>
+            </valorNomina>
+            <bonificacionBanda>
+                <banda>A1</banda>
+                <valorNom>2502400</valorNom>
+                <valorBanda>900864</valorBanda>
+            </bonificacionBanda>
+        </salidaWrapper>
+    </empleadosNomina>
+</documentoSalida>

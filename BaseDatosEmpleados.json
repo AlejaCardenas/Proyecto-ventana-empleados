@@ -1,0 +1,72 @@
+{
+  "listEmpleados" : [ {
+    "datosEmpleados" : {
+      "id" : "1033718747",
+      "nombre" : "Juan Carlos",
+      "apellido" : "Fuyo Gonzalez",
+      "telefono" : "3144071574",
+      "correo" : "juanf67@gmail.com",
+      "direccion" : {
+        "residencia" : "Cra 9 # 33 -44",
+        "barrio" : "Mirador Polo",
+        "ciudad" : "Cauca"
+      },
+      "fechaDeNac" : "1989-11-15",
+      "cargo" : "DESARROLLADOR_FULLSTACK",
+      "area" : "Desarrollador web",
+      "banda" : "A6"
+    },
+    "datosNomina" : {
+      "valHora" : 33900,
+      "horasT" : 144,
+      "diasV" : 4,
+      "diasI" : 1
+    }
+  }, {
+    "datosEmpleados" : {
+      "id" : "1000807021",
+      "nombre" : "Maria Alejandra",
+      "apellido" : "Cardenas Anaya",
+      "telefono" : "3117792692",
+      "correo" : "maca33@gmail.com",
+      "direccion" : {
+        "residencia" : "Cra 8 # 66 - 55",
+        "barrio" : "Sacarias",
+        "ciudad" : "Cali"
+      },
+      "fechaDeNac" : "2002-07-24",
+      "cargo" : "BACK_END_JUNIOR",
+      "area" : "Desarrollador web",
+      "banda" : "A4"
+    },
+    "datosNomina" : {
+      "valHora" : 49000,
+      "horasT" : 116,
+      "diasV" : 2,
+      "diasI" : 1
+    }
+  }, {
+    "datosEmpleados" : {
+      "id" : "37541862",
+      "nombre" : "Carmen Rosa",
+      "apellido" : "Anaya Rueda",
+      "telefono" : "3112944275",
+      "correo" : "zoor-89@gmail.com",
+      "direccion" : {
+        "residencia" : "cra 16",
+        "barrio" : "Rosario",
+        "ciudad" : "Piedecuesta"
+      },
+      "fechaDeNac" : "1989-10-09",
+      "cargo" : "FRONT_END_JUNIOR",
+      "area" : "Desarrolladora",
+      "banda" : "A4"
+    },
+    "datosNomina" : {
+      "valHora" : 78900,
+      "horasT" : 135,
+      "diasV" : 8,
+      "diasI" : 4
+    }
+  } ]
+}
