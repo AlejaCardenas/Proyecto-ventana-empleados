@@ -183,7 +183,6 @@ public class VentanaCalculoNomina extends JFrame implements ActionListener {
             }
         });
     }
-    //**************************************AQUI ESTAMOS INTENTANDO HACER UN FORMULARIO PARA MODIFICAR Y CREAR******************************//
     public JPanel panelFormulario(Map<String, JComponent> campos, EntradaWrapper empleado){
         try {
             JPanel panelFormulario = new JPanel();
@@ -284,8 +283,6 @@ public class VentanaCalculoNomina extends JFrame implements ActionListener {
             campos.put("banda", bandaCombo);
             panelFormulario.add(crearFilaCampo("Banda:", bandaCombo));
 
-            //*****************************antes de esto es nuevo**********************
-
             DatosNomina nominaMod = null;
             if (empleado != null && empleado.getDatosNomina() != null) {
                 nominaMod = empleado.getDatosNomina();
@@ -324,9 +321,6 @@ public class VentanaCalculoNomina extends JFrame implements ActionListener {
         }
         return null;
     }
-
-    //**************************************AQUI ESTAMOS INTENTANDO HACER UN FORMULARIO PARA MODIFICAR Y CREAR******************************//
-
     public void panelModificar(EntradaWrapper empleadoSeleccionado) {
         this.empleadoSeleccionado = empleadoSeleccionado;
         setTitle("EDICION DE DATOS DEL EMPLEADO");

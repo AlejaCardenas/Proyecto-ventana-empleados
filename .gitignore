@@ -53,3 +53,7 @@ node_modules/
 
 # Archivos de Docker
 *.env
+
+# Archivos de datos
+*.json
+*.xml
