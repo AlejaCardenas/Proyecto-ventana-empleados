@@ -183,30 +183,160 @@ public class VentanaCalculoNomina extends JFrame implements ActionListener {
             }
         });
     }
+    public JPanel panelFormulario(Map<String, JComponent> campos, EntradaWrapper empleado){
+        try {
+            JPanel panelFormulario = new JPanel();
+            panelFormulario.setLayout(new BoxLayout(panelFormulario, BoxLayout.Y_AXIS));
+
+            JTextField id = new JTextField();
+            if(empleado != null && empleado.getDatosEmpleados()!= null){
+                id.setText(empleado.getDatosEmpleados().getId());
+            }
+            campos.put("id", id);
+            panelFormulario.add(crearFilaCampo("ID", id));
+
+            JTextField nombre = new JTextField();
+            if(empleado != null && empleado.getDatosEmpleados() != null){
+                nombre.setText(empleado.getDatosEmpleados().getNombre());
+            }
+            campos.put("nombre", nombre);
+            panelFormulario.add(crearFilaCampo("Nombre", nombre));
+
+            JTextField apellido = new JTextField();
+            if(empleado != null && empleado.getDatosEmpleados() != null){
+                apellido.setText(empleado.getDatosEmpleados().getApellido());
+            }
+            campos.put("apellido", apellido);
+            panelFormulario.add(crearFilaCampo("Apellidos", apellido));
+
+            JTextField telefono = new JTextField();
+            if(empleado != null && empleado.getDatosEmpleados() != null){
+                telefono.setText(empleado.getDatosEmpleados().getTelefono());
+            }
+            campos.put("telefono", telefono);
+            panelFormulario.add(crearFilaCampo("Telefono", telefono));
+
+            JTextField correo = new JTextField();
+            if(empleado != null && empleado.getDatosEmpleados() != null){
+                correo.setText(empleado.getDatosEmpleados().getCorreo());
+            }
+            campos.put("correo", correo);
+            panelFormulario.add(crearFilaCampo("Correo", correo));
+
+            JTextField direccionRes = new JTextField();
+            if(empleado != null && empleado.getDatosEmpleados() != null){
+                direccionRes.setText(empleado.getDatosEmpleados().getDireccion().getResidencia());
+            }
+            campos.put("direccionRes", direccionRes);
+            panelFormulario.add(crearFilaCampo("Direccion(residencia)", direccionRes));
+
+            JTextField direccionBar = new JTextField();
+            if(empleado != null && empleado.getDatosEmpleados() != null){
+                direccionBar.setText(empleado.getDatosEmpleados().getDireccion().getBarrio());
+            }
+            campos.put("direccionBar", direccionBar);
+            panelFormulario.add(crearFilaCampo("Direccion(barrio)", direccionBar));
+
+            JTextField direccionCiu = new JTextField();
+            if(empleado != null && empleado.getDatosEmpleados() != null){
+                direccionCiu.setText(empleado.getDatosEmpleados().getDireccion().getCiudad());
+            }
+            campos.put("direccionCiu", direccionCiu);
+            panelFormulario.add(crearFilaCampo("Direccion(ciudad)", direccionCiu));
+
+            MaskFormatter mask = new MaskFormatter("##/##/####");
+            JFormattedTextField fechaNacimientoField = new JFormattedTextField(mask);
+            fechaNacimientoField.setColumns(10);
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            if(empleado != null && empleado.getDatosEmpleados() != null) {
+                if (empleado.getDatosEmpleados().getFechaDeNac() != null) {
+                    String fechaTexto = empleado.getDatosEmpleados().getFechaDeNac().format(formatter);
+                    fechaNacimientoField.setText(fechaTexto);
+                }
+            }
+            campos.put("fechaNacimiento", fechaNacimientoField);
+            panelFormulario.add(crearFilaCampo("F/N (dd/MM/yyyy):", fechaNacimientoField));
+
+            JComboBox<Cargo> cargoCombo = new JComboBox<>(Cargo.values());
+            if(empleado != null && empleado.getDatosEmpleados() != null) {
+                if (empleado.getDatosEmpleados().getCargo() != null) {
+                    cargoCombo.setSelectedItem(empleado.getDatosEmpleados().getCargo());
+                }
+            }
+            campos.put("cargo", cargoCombo);
+            panelFormulario.add(crearFilaCampo("Cargo:", cargoCombo));
+
+            JTextField area = new JTextField();
+            if(empleado != null && empleado.getDatosEmpleados() != null) {
+                area.setText(empleado.getDatosEmpleados().getArea());
+            }
+            campos.put("area", area);
+            panelFormulario.add(crearFilaCampo("Area", area));
+
+            JComboBox<Banda> bandaCombo = new JComboBox<>(Banda.values());
+            if(empleado != null && empleado.getDatosEmpleados() != null) {
+                if (empleado.getDatosEmpleados().getBanda() != null) {
+                    bandaCombo.setSelectedItem(empleado.getDatosEmpleados().getBanda());
+                }
+            }
+            campos.put("banda", bandaCombo);
+            panelFormulario.add(crearFilaCampo("Banda:", bandaCombo));
+
+            DatosNomina nominaMod = null;
+            if (empleado != null && empleado.getDatosNomina() != null) {
+                nominaMod = empleado.getDatosNomina();
+            }
+
+            JTextField valorH = new JTextField();
+            if(nominaMod != null) {
+                valorH.setText(String.valueOf(nominaMod.getValHora()));
+            }
+            campos.put("valHora", valorH);
+            panelFormulario.add(crearFilaCampo("Valor Trabajadas:", valorH));
+
+            JTextField horasT = new JTextField();
+            if(nominaMod != null){
+                horasT.setText(String.valueOf(nominaMod.getHorasT()));
+            }
+            campos.put("horasT", horasT);
+            panelFormulario.add(crearFilaCampo("Horas Trabajadas:", horasT));
+
+            JTextField diasI = new JTextField();
+            if(nominaMod != null){
+                diasI.setText(String.valueOf(nominaMod.getDiasI()));
+            }
+            campos.put("diasI", diasI);
+            panelFormulario.add(crearFilaCampo("Días Inasistidos:", diasI));
+
+            JTextField diasV = new JTextField();
+            if(nominaMod != null){
+                diasV.setText(String.valueOf(nominaMod.getDiasV()));
+            }
+            campos.put("diasV", diasV);
+            panelFormulario.add(crearFilaCampo("Días Vacaciones:", diasV));
+            return panelFormulario;
+        }catch (ParseException e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
     public void panelModificar(EntradaWrapper empleadoSeleccionado) {
         this.empleadoSeleccionado = empleadoSeleccionado;
-        DatosEmpleados empleados = empleadoSeleccionado.getDatosEmpleados();
-
         setTitle("EDICION DE DATOS DEL EMPLEADO");
         setSize(900, 200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        JPanel panelModificarDatos = new JPanel();
-        panelModificarDatos.setLayout(new BoxLayout(panelModificarDatos, BoxLayout.Y_AXIS));
         add(contenedor, BorderLayout.CENTER);
 
-        panelModificarDatos.add(crearFilaDto(empleados));
-        JLabel label = new JLabel("En la parte superior estan los datos del empleado seleccionado, en la parte inferior podra modificar los campos");
-        panelModificarDatos.add(label);
-
-
         camposDto = new HashMap<>();
-        JPanel panelCamposDto = crearFilaDtoNom(camposDto, empleadoSeleccionado);
-        panelModificarDatos.add(panelCamposDto);
+        JPanel panelCamposDto = panelFormulario(camposDto, empleadoSeleccionado);
+
+        add(panelCamposDto);
 
         JPanel panelPrincipal = new JPanel(new BorderLayout());
-        panelPrincipal.add(new JScrollPane(panelModificarDatos), BorderLayout.CENTER);
+        panelPrincipal.add(new JScrollPane(panelCamposDto), BorderLayout.CENTER);
 
         JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER));
         botonGuardar = new JButton("Guardar");
@@ -222,9 +352,6 @@ public class VentanaCalculoNomina extends JFrame implements ActionListener {
         cardLayout.show(contenedor, "panel3");
         contenedor.revalidate();
         contenedor.repaint();
-
-
-        panelModificarDatos.add(panelCamposDto);
 
         setLocationRelativeTo(null);
         setVisible(true);
@@ -277,9 +404,12 @@ public class VentanaCalculoNomina extends JFrame implements ActionListener {
             setDefaultCloseOperation(EXIT_ON_CLOSE);
             setLayout(new BorderLayout());
 
-            empleadoNuevo= new EntradaWrapper();
+            if(empleadoNuevo == null) {
+                empleadoNuevo = new EntradaWrapper();
+            }
+
             camposDto = new HashMap<>();
-            JPanel panelFormulario = crearFormulario(camposDto,empleadoNuevo);
+            JPanel panelFormulario = panelFormulario(camposDto,empleadoNuevo);
 
             JPanel panelPrincipal = new JPanel(new BorderLayout());
             panelPrincipal.add(new JScrollPane(panelFormulario), BorderLayout.CENTER);
@@ -475,103 +605,6 @@ public class VentanaCalculoNomina extends JFrame implements ActionListener {
         fila.add(label3);fila.add(jTextField3);
         fila.add(label4);fila.add(jTextField4);
         return fila;
-    }
-    private JPanel crearFilaDtoNom(Map<String, JComponent> campos, EntradaWrapper empleadoSeleccionado) {
-        DatosNomina nomina = empleadoSeleccionado.getDatosNomina();
-        JPanel panelModificarDatos = new JPanel();
-        panelModificarDatos.setLayout(new BoxLayout(panelModificarDatos, BoxLayout.Y_AXIS));
-
-        JTextField valHora = new JTextField(String.valueOf(nomina.getValHora()));
-        campos.put("valHora", valHora);
-        panelModificarDatos.add(crearFilaCampo("Valor Hora:", valHora));
-
-        JTextField horasT = new JTextField(String.valueOf(nomina.getHorasT()));
-        campos.put("horasT", horasT);
-        panelModificarDatos.add(crearFilaCampo("Horas Trabajadas:", horasT));
-
-        JTextField diasI = new JTextField(String.valueOf(nomina.getDiasI()));
-        campos.put("diasI", diasI);
-        panelModificarDatos.add(crearFilaCampo("Días Inasistidos:", diasI));
-
-        JTextField diasV = new JTextField(String.valueOf(nomina.getDiasV()));
-        campos.put("diasV", diasV);
-        panelModificarDatos.add(crearFilaCampo("Días Vacaciones:", diasV));
-        return  panelModificarDatos;
-        }
-
-    private JPanel crearFormulario(Map<String, JComponent> campos, EntradaWrapper empleadoNuevo) throws ParseException {
-
-        JPanel panelFormulario = new JPanel();
-        panelFormulario.setLayout(new BoxLayout(panelFormulario, BoxLayout.Y_AXIS));
-
-        JTextField id = new JTextField();
-        campos.put("id", id);
-        panelFormulario.add(crearFilaCampo("ID", id));
-
-        JTextField nombre = new JTextField();
-        campos.put("nombre", nombre);
-        panelFormulario.add(crearFilaCampo("Nombre", nombre));
-
-        JTextField apellido = new JTextField();
-        campos.put("apellido", apellido);
-        panelFormulario.add(crearFilaCampo("Apellidos", apellido));
-
-        JTextField telefono = new JTextField();
-        campos.put("telefono", telefono);
-        panelFormulario.add(crearFilaCampo("Telefono", telefono));
-
-        JTextField correo = new JTextField();
-        campos.put("correo", correo);
-        panelFormulario.add(crearFilaCampo("Correo", correo));
-
-        JTextField direccionRes = new JTextField();
-        campos.put("direccionRes", direccionRes);
-        panelFormulario.add(crearFilaCampo("Direccion(residencia)", direccionRes));
-
-        JTextField direccionBar = new JTextField();
-        campos.put("direccionBar", direccionBar);
-        panelFormulario.add(crearFilaCampo("Direccion(barrio)", direccionBar));
-
-        JTextField direccionCiu = new JTextField();
-        campos.put("direccionCiu", direccionCiu);
-        panelFormulario.add(crearFilaCampo("Direccion(ciudad)", direccionCiu));
-
-        MaskFormatter mask = new MaskFormatter("##/##/####");
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        JFormattedTextField fechaNacimientoField = new JFormattedTextField(mask);
-        fechaNacimientoField.setColumns(10);
-        campos.put("fechaNacimiento", fechaNacimientoField);
-        panelFormulario.add(crearFilaCampo("F/N (dd/MM/yyyy):", fechaNacimientoField));
-
-        JComboBox<Cargo> cargoCombo = new JComboBox<>(Cargo.values());
-        campos.put("cargo", cargoCombo);
-        panelFormulario.add(crearFilaCampo("Cargo:", cargoCombo));
-
-        JTextField area = new JTextField();
-        campos.put("area", area);
-        panelFormulario.add(crearFilaCampo("Area", area));
-
-        JComboBox<Banda> bandaCombo = new JComboBox<>(Banda.values());
-        campos.put("banda", bandaCombo);
-        panelFormulario.add(crearFilaCampo("Banda:", bandaCombo));
-
-        //*****************************antes de esto es nuevo**********************
-        JTextField valorH = new JTextField();
-        campos.put("valorH", valorH);
-        panelFormulario.add(crearFilaCampo("Valor Trabajadas:", valorH));
-
-        JTextField horasT = new JTextField();
-        campos.put("horasT", horasT);
-        panelFormulario.add(crearFilaCampo("Horas Trabajadas:", horasT));
-
-        JTextField diasI = new JTextField();
-        campos.put("diasI", diasI);
-        panelFormulario.add(crearFilaCampo("Días Inasistidos:", diasI));
-
-        JTextField diasV = new JTextField();
-        campos.put("diasV", diasV);
-        panelFormulario.add(crearFilaCampo("Días Vacaciones:", diasV));
-        return  panelFormulario;
     }
 
     private String obtenerValorCampo(Map<String, JComponent> campos, String clave) {

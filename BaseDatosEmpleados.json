@@ -68,5 +68,28 @@
       "diasV" : 8,
       "diasI" : 4
     }
+  }, {
+    "datosEmpleados" : {
+      "id" : "5874635",
+      "nombre" : "Fredy Mauricio",
+      "apellido" : "Cardenas",
+      "telefono" : "3105534231",
+      "correo" : "fredyCar123@gmail.com",
+      "direccion" : {
+        "residencia" : "cra 89 # 4 -23",
+        "barrio" : "Miralol",
+        "ciudad" : "Cali"
+      },
+      "fechaDeNac" : "1978-03-12",
+      "cargo" : "BACK_END_SENIOR",
+      "area" : "desarrollador",
+      "banda" : "A4"
+    },
+    "datosNomina" : {
+      "valHora" : 78000,
+      "horasT" : 143,
+      "diasV" : 3,
+      "diasI" : 3
+    }
   } ]
 }
